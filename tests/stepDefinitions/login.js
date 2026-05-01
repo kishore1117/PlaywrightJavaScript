@@ -6,7 +6,7 @@ let page;
 let browser;
 
 Given("when the user navigates to login page", async ()=>{
- browser = await chromium.launch();
+ browser = await chromium.launch({ headless: true });
  page = await browser.newPage();
  await page.goto("https://www.saucedemo.com/");
 })

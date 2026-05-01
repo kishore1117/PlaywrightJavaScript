@@ -1,0 +1,163 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-functionality;login-successfull",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "login successfull",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "when the user navigates to login page",
+            "match": {
+              "location": "tests/stepDefinitions/login.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 630878875
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "the user enters valid username \"standard_user\" and valid password \"secret_sauce\"",
+            "match": {
+              "location": "tests/stepDefinitions/login.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 110861041
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "user should be able to view the inventory page",
+            "match": {
+              "location": "tests/stepDefinitions/login.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17568667
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-functionality;invalid-login",
+        "keyword": "Scenario Outline",
+        "line": 15,
+        "name": "Invalid login",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "when the user navigates to login page",
+            "match": {
+              "location": "tests/stepDefinitions/login.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 338281082
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters invalid username \"invalid_user\" and invalid password \"secret_sauce\"",
+            "match": {
+              "location": "tests/stepDefinitions/login.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 81755791
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "user should see the error message \"Epic sadface: Username and password do not match any user in this service\"",
+            "match": {
+              "location": "tests/stepDefinitions/login.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15744125
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-functionality;invalid-login",
+        "keyword": "Scenario Outline",
+        "line": 16,
+        "name": "Invalid login",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "when the user navigates to login page",
+            "match": {
+              "location": "tests/stepDefinitions/login.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 327754334
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user enters invalid username \"standard_user\" and invalid password \"invalid_pass\"",
+            "match": {
+              "location": "tests/stepDefinitions/login.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 85624207
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "user should see the error message \"Epic sadface: Username and password do not match any user in this service\"",
+            "match": {
+              "location": "tests/stepDefinitions/login.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14268540
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "login functionality",
+    "tags": [],
+    "uri": "tests/features/login.feature"
+  }
+]
