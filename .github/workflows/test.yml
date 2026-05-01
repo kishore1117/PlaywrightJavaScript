@@ -1,42 +1,33 @@
-name: BDD Tests
+name: BDD Cucumber Playwright Tests
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ "**" ]
   pull_request:
-    branches: [ main, develop ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-    
-    - name: Install dependencies
-      run: npm install
-    
-    - name: Install Playwright browsers
-      run: npx playwright install
-    
-    - name: Run Cucumber tests
-      run: npm run cucumber
-    
-    - name: Upload test report
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: cucumber-reports
-        path: reports/
-    
-    - name: Publish test results
-      if: always()
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      with:
-        json_files: 'reports/cucumber-report.json'
-        check_name: 'Cucumber Test Results'
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t bdd-tests .
+
+      - name: Run tests (headless) and generate reports
+        run: |
+          mkdir -p target
+          docker run --rm -t \
+            -v "${GITHUB_WORKSPACE}/target:/app/target" \
+            bdd-tests
+
+      - name: Upload Cucumber reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-reports
+          path: |
+            target/cucumber-report.html
+            target/cucumber-report.json

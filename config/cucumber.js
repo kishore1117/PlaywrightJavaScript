@@ -7,8 +7,8 @@ module.exports ={
         format:[
             "progress-bar",
             "summary",
-            "json:reports/cucumber-report.json",
-            "html:reports/cucumber-report.html"
+            "json:target/cucumber-report.json",
+            "html:target/cucumber-report.html"
         ],
         formatOptions:{
             colorsEnabled:true,

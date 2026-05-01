@@ -14,5 +14,8 @@ RUN npx playwright install
 # Copy project files
 COPY . .
 
+# Create target directory for reports
+RUN mkdir -p target
+
 # Run tests
 CMD ["npm", "run", "cucumber"]
