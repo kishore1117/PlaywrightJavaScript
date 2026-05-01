@@ -5,6 +5,9 @@ on:
     branches: [ "**" ]
   pull_request:
 
+env:
+  NODE_VERSION: '20'
+
 jobs:
   test:
     runs-on: ubuntu-latest
